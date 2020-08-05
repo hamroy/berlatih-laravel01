@@ -18,7 +18,7 @@
    
 
             </div>
-            <form action="/welcome" method="post">
+            <form action="{{url('/welcome')}}" method="post">
                 @csrf    
                     <div>
                     <label for="">First Name</label>
