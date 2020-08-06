@@ -23,7 +23,7 @@ Route::get('/master', function ()
 {
 	return view('adminlte/master');
 });
-
+	
 // 
 Route::get('/', function () //Hari 3 – Memasangkan Template dengan Laravel Blade
 {
