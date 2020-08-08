@@ -20,12 +20,12 @@ Route::post('/welcome', 'AuthController@welcome');
 
 // lanjutan 
 Route::get('/master', function ()
-{
+{	
 	return view('adminlte/master');
 });
 	
 // 
-Route::get('/', function () //Hari 3 – Memasangkan Template dengan Laravel Blade
+Route::get('/tbl', function () //Hari 3 – Memasangkan Template dengan Laravel Blade
 {
 	return view('adminlte.table.table');
 });
@@ -34,3 +34,13 @@ Route::get('/data-tables', function ()
 {
 	return view('adminlte.table.data-tables');
 });
+
+////Hari 5 – Berlatih CRUD di Laravel
+Route::get('/pertanyaan', 'PertanyaanController@index');
+Route::get('/pertanyaan/create', 'PertanyaanController@create');
+Route::post('/pertanyaan', 'PertanyaanController@store');
+Route::get('/pertanyaan/{pertanyaan_id}', 'PertanyaanController@show');
+Route::get('/pertanyaan/{pertanyaan_id}/edit', 'PertanyaanController@edit');
+Route::put('/pertanyaan/{pertanyaan_id}', 'PertanyaanController@update');
+Route::delete('/pertanyaan/{pertanyaan_id}', 'PertanyaanController@destroy');
+

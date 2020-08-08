@@ -1,6 +1,8 @@
 @extends('adminlte.master')
 
 @section('content')
+<div class="card">
+<div class="card-body">
 <table class="table table-bordered">
   <thead>                  
     <tr>
@@ -53,6 +55,8 @@
     </tr>
   </tbody>
 </table>
+</div>
+</div>
 @endsection
 
 @push('script')
