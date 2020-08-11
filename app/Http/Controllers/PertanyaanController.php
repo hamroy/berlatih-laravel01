@@ -5,10 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\pertanyaan;
+use Auth;
 
 class PertanyaanController extends Controller
 {
     //public 
+    public function __construct()
+    {
+        // $this->middleware('auth')->only(['index']);
+    }
+
     function index($value='')
     {
     	// $list = DB::table('pertanyaan')->get();
@@ -67,7 +73,7 @@ class PertanyaanController extends Controller
         $pertanyaan = pertanyaan::create([
              'judul' => $request->judul, 
              'isi' => $request->isi,
-             'profil_id' => 1,
+             'profil_id' => Auth::user()->id,
             ]);
 
     	return redirect('pertanyaan')->with("success",'data berhasil disimpan');

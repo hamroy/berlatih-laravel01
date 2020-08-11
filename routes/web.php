@@ -14,18 +14,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', 'HomeController@index'); //tugas Hari 2 – Membuat Web Statis dengan Laravel
-Route::get('/register', 'AuthController@register');
-Route::post('/welcome', 'AuthController@welcome');
+// Route::get('/', 'AuthController'); //tugas Hari 2 – Membuat Web Statis dengan Laravel
+// Route::get('/register', 'AuthController@register');
+// Route::post('/welcome', 'AuthController@welcome');
 
 // lanjutan 
-Route::get('/master', function ()
+Route::get('/', function ()
 {	
-	return view('adminlte/master');
+	return view('welcome');
 });
 	
 // 
-Route::get('/tbl', function () //Hari 3 – Memasangkan Template dengan Laravel Blade
+/*Route::get('/tbl', function () //Hari 3 – Memasangkan Template dengan Laravel Blade
 {
 	return view('adminlte.table.table');
 });
@@ -34,7 +34,7 @@ Route::get('/data-tables', function ()
 {
 	return view('adminlte.table.data-tables');
 });
-
+//*/
 ////Hari 5 – Berlatih CRUD di Laravel
 // Route::get('/pertanyaan', 'PertanyaanController@index')->name('pertanyaan.index');
 // Route::get('/pertanyaan/create', 'PertanyaanController@create');
@@ -45,5 +45,9 @@ Route::get('/data-tables', function ()
 // Route::delete('/pertanyaan/{pertanyaan_id}', 'PertanyaanController@destroy');
 
 ////Pekan 4 , Hari 1 – Laravel CRUD (dengan Eloquent ORM)
-Route::resource('pertanyaan', 'PertanyaanController');
+Route::resource('pertanyaan', 'PertanyaanController')->middleware('auth');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
