@@ -18,8 +18,8 @@ class CreateLikeDislikeJawabanTable extends Migration
             $table->integer('poin');
             $table->unsignedBigInteger('jawaban_id');
             $table->unsignedBigInteger('profil_id');
-            $table->foreign('profil_id')->references('id')->on('profil');
-            $table->foreign('jawaban_id')->references('id')->on('jawaban');
+            $table->foreign('profil_id')->references('id')->on('profil')->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->foreign('jawaban_id')->references('id')->on('jawaban')->onDelete('CASCADE')->onUpdate('CASCADE');
         });
     }
 

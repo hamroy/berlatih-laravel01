@@ -36,11 +36,14 @@ Route::get('/data-tables', function ()
 });
 
 ////Hari 5 – Berlatih CRUD di Laravel
-Route::get('/pertanyaan', 'PertanyaanController@index');
-Route::get('/pertanyaan/create', 'PertanyaanController@create');
-Route::post('/pertanyaan', 'PertanyaanController@store');
-Route::get('/pertanyaan/{pertanyaan_id}', 'PertanyaanController@show');
-Route::get('/pertanyaan/{pertanyaan_id}/edit', 'PertanyaanController@edit');
-Route::put('/pertanyaan/{pertanyaan_id}', 'PertanyaanController@update');
-Route::delete('/pertanyaan/{pertanyaan_id}', 'PertanyaanController@destroy');
+// Route::get('/pertanyaan', 'PertanyaanController@index')->name('pertanyaan.index');
+// Route::get('/pertanyaan/create', 'PertanyaanController@create');
+// Route::post('/pertanyaan', 'PertanyaanController@store');
+// Route::get('/pertanyaan/{pertanyaan_id}', 'PertanyaanController@show');
+// Route::get('/pertanyaan/{pertanyaan_id}/edit', 'PertanyaanController@edit');
+// Route::put('/pertanyaan/{pertanyaan_id}', 'PertanyaanController@update');
+// Route::delete('/pertanyaan/{pertanyaan_id}', 'PertanyaanController@destroy');
+
+////Pekan 4 , Hari 1 – Laravel CRUD (dengan Eloquent ORM)
+Route::resource('pertanyaan', 'PertanyaanController');
 

@@ -19,8 +19,8 @@ class CreateJawabanTable extends Migration
             $table->longText('isi');
             $table->unsignedBigInteger('profil_id');
             $table->unsignedBigInteger('pertanyaan_id');
-            $table->foreign('profil_id')->references('id')->on('profil');
-            $table->foreign('pertanyaan_id')->references('id')->on('pertanyaan');
+            $table->foreign('profil_id')->references('id')->on('profil')->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->foreign('pertanyaan_id')->references('id')->on('pertanyaan')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->timestamps();
         });
     }

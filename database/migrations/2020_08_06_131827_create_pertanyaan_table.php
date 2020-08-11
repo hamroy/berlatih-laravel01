@@ -18,7 +18,7 @@ class CreatePertanyaanTable extends Migration
             $table->string('judul');
             $table->longText('isi');
             $table->unsignedBigInteger('profil_id');
-            $table->foreign('profil_id')->references('id')->on('profil');
+            $table->foreign('profil_id')->references('id')->on('profil')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->timestamps();
         });
     }

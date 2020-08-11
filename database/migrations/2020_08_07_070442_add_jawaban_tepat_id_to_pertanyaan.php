@@ -15,9 +15,9 @@ class AddJawabanTepatIdToPertanyaan extends Migration
     {
         Schema::table('pertanyaan', function (Blueprint $table) {
             //
-            $table->unsignedBigInteger('jawaban_tepat_id');
-            $table->foreign('jawaban_tepat_id')->references('id')->on('jawaban')
-            ->onDelete('CASCADE')->onUpdate('CASCADE');
+            // $table->unsignedBigInteger('jawaban_tepat_id');
+            // $table->foreign('jawaban_tepat_id')->references('id')->on('jawaban')
+            // ->onDelete('CASCADE')->onUpdate('CASCADE');
         });
     }
 
@@ -28,11 +28,17 @@ class AddJawabanTepatIdToPertanyaan extends Migration
      */
     public function down()
     {
+    
+        // Schema::enableForeignKeyConstraints();
+
             Schema::table('pertanyaan', function (Blueprint $table) {
             //
-            $table->dropForeign('jawaban_tepat_id');
-            $table->dropColumn('jawaban_tepat_id');
+            // $table->dropForeign('jawaban_tepat_id');
+            // $table->dropColumn('jawaban_tepat_id');
 
-        });
+            });
+
+        // Schema::disableForeignKeyConstraints();
+
     }
 }
